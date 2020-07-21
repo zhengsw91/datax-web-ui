@@ -233,6 +233,7 @@ export default {
       visible: true,
       dataSources: [
         { value: 'mysql', label: 'mysql' },
+        { value: 'mysql8' ,label: 'mysql8'},
         { value: 'oracle', label: 'oracle' },
         { value: 'postgresql', label: 'postgresql' },
         { value: 'sqlserver', label: 'sqlserver' },
@@ -254,6 +255,9 @@ export default {
       if (datasource === 'mysql') {
         this.temp.jdbcUrl = 'jdbc:mysql://{host}:{port}/{database}'
         this.temp.jdbcDriverClass = 'com.mysql.jdbc.Driver'
+      } else if(datasource === 'mysql8'){
+        this.temp.jdbcUrl = 'jdbc:mysql://{host}:{port}/{database}'
+        this.temp.jdbcDriverClass = 'com.mysql.cj.jdbc.Driver'
       } else if (datasource === 'oracle') {
         this.temp.jdbcUrl = 'jdbc:oracle:thin:@//{host}:{port}/{database}'
         this.temp.jdbcDriverClass = 'oracle.jdbc.OracleDriver'
