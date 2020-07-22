@@ -255,8 +255,8 @@ export default {
       if (datasource === 'mysql') {
         this.temp.jdbcUrl = 'jdbc:mysql://{host}:{port}/{database}'
         this.temp.jdbcDriverClass = 'com.mysql.jdbc.Driver'
-      } else if(datasource === 'mysql8'){
-        this.temp.jdbcUrl = 'jdbc:mysql://{host}:{port}/{database}'
+      } else if (datasource === 'mysql8') {
+        this.temp.jdbcUrl = 'jdbc:mysql://{host}:{port}/{database}?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=UTC'
         this.temp.jdbcDriverClass = 'com.mysql.cj.jdbc.Driver'
       } else if (datasource === 'oracle') {
         this.temp.jdbcUrl = 'jdbc:oracle:thin:@//{host}:{port}/{database}'
